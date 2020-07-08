@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 140px;
+            height: 30px;
+            background: #00f;
+            color: #fff;
+            line-height: 30px;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="弹出" onclick="alert('我是按钮')">
+    <!-- 这里绑定了一个click的点击事件，如果点击了就会触发事件了哈  -->
+    <!-- 鼠标划过按钮时调用这个函数 -->
+    <div id="btn" class="btn" onmouseover="mouseoverFn(this, '#f00')" onmouseout="mouseoutFn(this,'#00f')">开始</div>
+    <!-- 这里的this就是代表这个onmouseout处于的这个DOM标签的对象的。 -->
+    <div class="btn" onmouseover="mouseoverFn(this, '#ff0')" onmouseout="mouseoutFn(this,'#333')">结束</div>
+    <script>
+        function mouseoverFn(btn, bgcolor) {
+            //鼠标划过按钮时按钮编程红色
+            //鼠标划过的时候就会打印出btn的这个DOM对象
+            console.log(btn);
+            btn.style.background = bgcolor;
+        }
+        function mouseoutFn(btn, bgcolor) {
+            console.log(btn);
+            btn.style.background = bgcolor;
+        }
+    </script>
+</body>
+
+</html>

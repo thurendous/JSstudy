@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = init;
+        function init() {
+            var menu = document.getElementById("bgselect");
+            // 给菜单绑定change事件，一般作用域select或者checkbox或者radio
+            menu.onchange = function () {
+                //获取当前选中的值
+                var bgcolor = this.value;
+                // var bgcolor = menu.options[menu.selectedIndex].value;
+                if (bgcolor == "") { document.body.style = "fff"; }
+                else {
+                    document.body.style.background = bgcolor;
+                }
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        请选择你喜欢的背景色：
+        <select name="" id="bgselect">
+            <option value="">请选择</option>
+            <option value="#f00">RED</option>
+            <option value="green">GREEN</option>
+            <option value="blue">BLUE</option>
+            <option value="grey">GREY</option>
+        </select>
+    </div>
+
+</body>
+
+</html>

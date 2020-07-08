@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var tel = "hLLLLlwo-worsl-errwe";
+        var upper = tel.toLowerCase();
+        document.write(upper + "<br>");
+
+        function camelback(str) {
+            var arr = str.split("-");
+            var newStr = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                var word = arr[i];
+                newStr += word.charAt(0).toUpperCase() + word.substr(1);
+            }
+            return newStr;
+        }
+        var camelFormat = camelback("border-left-coolr");
+        document.write(camelFormat);
+    </script>
+
+</body>
+
+</html>
