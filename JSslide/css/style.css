@@ -31,8 +31,8 @@ body{
     width: 1200px;
     height:460px;
     position: absolute;
-        background-repeat: no-repeat;
-        display:none;
+    background-repeat: no-repeat;
+    display:none;
 }
 
 .slide1{
