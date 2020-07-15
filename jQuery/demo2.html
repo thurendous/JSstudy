@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <div id="div">
+            <ul class="ul" id="ul">
+                <li class="item1">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li class="item4">4</li>
+                <li id="info">5</li>
+                <li>6</li>
+                <li>7</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var element = $("#div").contents();
+            var element2 = $("#div > *");
+            console.log(element);
+            console.log(element2);
+        })
+    </script>
+</body>
+
+</html>
