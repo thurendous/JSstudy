@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <p id="example" class="example" onclick='console.log("click")'>222</p>
+    <div id="p1">
+        <div id="p1-1">
+            <div id="p1-1-1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, quam blanditiis porro rerum, officiis
+                    iure voluptatum perspiciatis quasi eos vel voluptatibus, repudiandae explicabo iusto corrupti non
+                    repellat molestias accusantium accusamus.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("p").on("click", function (event) {
+                console.log("p clicked");
+            }).on("click", function (event) {
+                console.log("p clicked 2");
+            })
+        })
+
+    </script>
+</body>
+
+</html>
