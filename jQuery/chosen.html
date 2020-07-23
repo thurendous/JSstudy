@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/chosen/1.8.7/chosen.css" rel="stylesheet">
+</head>
+
+<body>
+    <select name="demo" id="demo" style="width: 300px">
+        <option value="1">11111</option>
+        <option value="2">22222</option>
+        <option value="3">33333</option>
+        <option value="4">444444</option>
+    </select>
+    <br>
+    <br>
+    <select name="demo2" id="demo2" multiple data-placeholder="请选择...">
+        <option value="1">111111</option>
+        <option value="2">222222</option>
+        <option value="3">322222</option>
+        <option value="4">4333333</option>
+    </select>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
+    <script>
+        $(function () {
+            $('#demo').chosen();
+            $('#demo2').chosen({
+                width: '50%'
+            });
+        });
+    </script>
+</body>
+
+</html>
