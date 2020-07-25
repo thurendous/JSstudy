@@ -218,6 +218,161 @@ console.log(orderMyLogic(3));
 ```
 this is a bad example. you should replace the order in order to make the val < 5 statement do things.
 
+## switch statement
+``` javascript
+function caseInSwitch(val){
+    var answer = "";
+    switch(val){
+        case 1:
+            answer = "alpha";
+            break;
+        case 2:
+            answer = "beta";
+            break;
+        case 3:
+            answer = "theta";
+            break;
+        case 4:
+            answer = "gamma";
+            break;
+        default:  // is like the else if statement in logical statement
+            answer = "not defined yet man";
+            break;
+    }
+    return answer;
+}
+console.log(caseInSwitch(1));
+
+
+// another example 
+function sequentialSizes(val) {
+    var answer = "";
+    switch(val) = "";
+    switch (val){
+        case 1:
+        case 2:
+        case 3:
+            answer = "Low";
+            break;
+        case 4:
+        case 5:
+        case 6:
+            answer = "medium";
+            breank;
+        case 7:
+        case 8:
+        case 9:
+            answer = "high";
+            break;
+    }
+    return answer;
+}
+```
+## return to interrupet the function
+``` javascript
+function dainari(a, b){
+    if (a < 0 || b< 0) {
+        return undifined;
+    }
+    return a > b;
+}
+// with this return beforehand you can exit the function at any time.
+```
+
+# object creation
+``` javascript
+var myDog = {
+    "name": "Quincy";
+    "legs": 3,
+    "tails": 2,
+    friends":[],
+};
+```
+
+## two ways to access the object
+`objectName.attributeName`  
+this is the way to access the object.
+
+``` javascript
+var testObj = {
+    "an entree": "hamburger",
+    "my side": "veggies",
+    "the dark": "water",
+};
+var entreeValue = testObj["an entree"];
+var drinkValue = testObj["the drink"];
+// by this we can access the value in the object
+```
+
+
+## Set New Properties in the object
+`ourDog.bark = "bow-cow";`
+`myDog["name"] = "Happy car";`
+
+
+## delete property in the object
+`delete myDog.tails`
+by this we delete the property `tails`
+
+## access the nested element in array and object
+`myPlants[1].list[1];`  
+this is the way to access a array with some objects inside. 
+
+
+## loop
+``` javascript
+var myArray = [];
+var ourArray = [];
+for (var i = 0; i < 5; i++){
+    ourArray.push(i);
+}
+
+// while loop
+var myArray = [];
+
+var i = 0;
+
+while (i<5) {
+    myArray.push(i);
+    i++;
+}
+console.log(myArray);
+
+//do while loop
+var myArray = [];
+var i = 10;
+do {
+    myArray.pysh(i);
+    i++;
+}while(i < 5);
+
+console.log(i, myArray);
+```
+
+## random fraction 
+``` javascript
+function randomFraction() {
+    return Math.random();
+}
+console.log(randomFraction());
+// create a random number
+
+// use Math.floor(Math.random()) to get a whole number.
+```
+
+## Use the Conditional (Ternary) Operator
+``` javascript
+// condition ? statement-if-true : statement-if-false;
+function checkEqual(a,b) {
+    return a ===b? true: false;
+}
+
+// multiple conditions
+function check
+```
+
+
+
 
 
 
