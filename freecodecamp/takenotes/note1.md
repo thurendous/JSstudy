@@ -837,7 +837,7 @@ export default function substract(x, y) {return x - y;}
 ```
 
 ``` javascript
-// if it is default you don't need to us {substract}
+// if it is default you don't need to use {substract}
 import substract from "math_functions";
 ```
 
