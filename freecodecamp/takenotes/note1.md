@@ -369,10 +369,159 @@ function checkEqual(a,b) {
 
 // multiple conditions
 function check
+``` javascript
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero" 
+}  
+```
+
+## differences between the var and let keywords
+``` javascript
+// let does not let you declare a varible twice
+let catName = "mark";
+let catName = "Cark";
+// above code will give you an error. cuz you have declared twice. 
+let catName = "mark";
+catName = "Cark";
+//this time it will not give you an error. 
+// this is one of the reasons why people only use "let" and "const" to declare varible.
+
+// "let" can declare a varible and make it usable in the block. "var"can declare a varible and make it usable globally.
+```
+
+## "use strict"
+this enable strict mode. this can catch unexpected code and actions.
+It can be put at the beginning of the code or put in the function. 
+
+## const
+"const" is a read-only way to define a varible. when you use const you always want to use CAPITAL LETTERS to name it.
+
+```const SENTENCE = "str";```
+"const" doesnt make the array unchangable.
+
+
+## freeze
+```object.freeze(objectName);```
+use this to make the object immutable. 
+
+## annonymous function 
+``` javascript
+var magic = function () => { 
+    return new Date();
+    }
+
+var magic = () => {
+    return new Date();
+}
+
+var magic = () -> new Date();
+
+// with parameters
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+// after the arrow we have the return value
+console.log(myConcat([1,2], [3,4,5]));
+
+// higher order Arrow function 
+
+<script type="text/javascript">
+
+var a = [1,2,3];
+document.write(a.concat(4,5));
+// 1,2,3,4,5
+</script>
+ 
 ```
 
 
+## foreach
+``` javascript
+[1,2,3].foreach(function(item, index){
+    console.log(item, index);
+    });
+//1 0
+//2 1
+//3 2
 
+//map -> this put a new thing into the mao element position
+const three = [1,2,3];
+const doubled = three.map(function(item){
+return item * 2;
+});
+console.log(doubled);
+//[2, 4, 6]
+// if you use an arrow function
+const three = [1,2,3];
+const doubled = three.map(item => item*2 )
+
+//filter: check each item in the array if it is true then return the item to the array.
+const ints = [1,2,3];
+const evens = ints.filter(function (item){
+    return item % 2 ===0;
+});
+console.log(evens);
+
+//reduce: add up the elements in the array list.
+const sum = [1,2,3].reduce(function(result, item){
+    return result + item;
+}, 0);
+console.log(sum);
+// 6
+
+// some: check item in the array meets this condition or not? 
+const hasNegativeNumbers = [1,2,3,-1,4].some(function(item) {
+    return item < 0;
+});
+console.log(hasNegativeNumbers);
+// true
+
+// every: it is like "some". but it is a way to check if all the items meet the condition. if it is true then return true.
+const allPositiveNumbers = [1,2,3](function(item){
+    return item > 0;
+})
+console.log(allPositiveNumbers);
+// true
+
+// find: it goes around the array and check the condittion if it is true then it returns the item.
+const objects = [{id: "a"}, {id: "b"}, {id: "c"}];
+const found = objects.find(function(item){ 
+    return item.id === "b";
+})
+console.log(found);
+// {id: "b"}
+
+// find index: it is like find, instead of returning the item, it is going to return the index of the item].
+const object2 = [{id: "a"}, {id: "b"}, {id: "c"}];
+const foundIndex = object2.findIndex(function (item){ 
+    return item.id ==="b";
+})
+console.log(foundIndex);
+// 1
+// if there is no such thing, it will return "-1"
+```
+
+
+## hihger order arrow funcitons
+``` javascript
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8, 8.34, -2];
+
+const squareList = (arr) => {
+    const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x*x);
+    return squaredIntegers;
+}
+```
+
+## Write Highter Order Arrow Functions
+``` javascript
+const increment = (function(){
+    return function increment(number, value=1){
+        return number + value;
+    }
+})();// this "()" is very important to understand this.
+console.log(increment(5,2));
+console.log(increment(5));
+// 7
+// 6
+```
 
 
 
