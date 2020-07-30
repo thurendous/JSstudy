@@ -109,5 +109,5 @@ e.g.
 button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterClick);
 ```
-
+> We did not put a function which runs immediately. We want to let it know though that we want this action to happen wehn a click happens. So we are passing a reference to the function without running it.
 
