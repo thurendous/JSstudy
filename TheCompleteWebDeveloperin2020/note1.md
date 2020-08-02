@@ -286,9 +286,77 @@ const add2 => (a,b) {
 
 ```
 
+# advanvced functions
+
+``` javascript
+const first = () => {
+  const greet ="Hi";
+  const second => () {
+    alert(greet);
+  }
+  return second;
+
+}
+
+const newFunc = first();
+newFunc();
+
+//closure闭包
+// Closures - a function ran. the function executed. it's never gonna execute again. 
+// BUT it's going to remember tha there are references to those varibles. 
+// so the child scope always has access to the parent scope.
+
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+ 
+add();
+add();
+add();
+ 
+// 计数器为 3
+// 实例解析
+// 变量 add 指定了函数自我调用的返回字值。
+// 自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。
+// add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。
+// 这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。
+// 计数器受匿名函数的作用域保护，只能通过 add 方法修改。
 
 
 
+```
+
+# currying
+``` javascript
+const multiply = (a,b) => a * b;
+const curriedmultiply = (a) => (b) => a*b; 
+// above is almost the same as below
+// const curreidmultiply = function (a) {
+//   var a = a;
+//   return function fun2(b) {
+//     return a * b;
+//   }
+// }
+
+//compose 
+const compose = (f,g) => (a) => f(g(a));
+
+const sum = (num) => num + 1;
+
+compose (sum, sum)(5);
+// 7
+
+
+```
+You need to understand this to understand the code of some other projects. 
+
+# The idea of avoiding side effects.
+Being a developer and knowing that we need to avoid the side effects. 
+and keeo the deterministic property. No matter what you put into the funciton it always return the same thing.
+> What are the two elements of a pure function?
+1. Deterministic-- > always produces the same results given the same inputs
+2. No Side Effects-- > It does not depend on any state, or data, change during a program’s execution.It must only depend on its input elements.
 
 
 
