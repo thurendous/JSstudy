@@ -830,21 +830,16 @@ export const bar = "foo";
 import * as capitalizeStrings from "capitalize_ strings";
 ```
 
-
 ## Create an Export Fallback with export default 
 ``` javascript
+// if you only want to export one thing
 export default function substract(x, y) {return x - y;}
 ```
 
+## how to import default export 
 ``` javascript
-// if it is default you don't need to use {substract}
-import substract from "math_functions";
+// cuz it is a default export so we do not need to add the 
+import substact from "math_functions"
+
+substract(7,4);
 ```
-
-
-
-
-
-
-
-
