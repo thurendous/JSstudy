@@ -423,3 +423,76 @@ let removed = myFish.splice(2, 0, 'drum', 'guitar')
 // removed is [], no elements removed
 
 ```
+
+# advanced objects
+``` javascript
+// reference type
+var num1 = 1;
+var num2 = 2;
+num1 === num2 // true
+
+var object1 = {value: 10}; // created a object
+var object2 = object1;  // references the object1
+var object2 = {value: 10}; // created a new object
+
+object2 === object1; // true
+object3 === object1; //flase
+
+[] === []; // false
+
+// context vs scope
+// context is always confused with scope. We create a scope when we create a curly bracket.
+function() {
+    let a = a;
+}
+
+// context is where you are in right now.
+// when you type this in the browser 
+console.log(this);
+// window object will be logged.   
+const a = () => {
+    console.log(this);
+}
+a();
+// still returns window object.
+// cuz the context means  what obeject we are in. 
+const object4 = {
+    a: function(){
+        console.log(this);
+    }
+}
+
+// instantiation: 
+
+//how we do instantiation in the first place. 
+class Player {
+    // this is just the syntax to remember. Every time when you create a function, the first thing that will run is the constructor function. 
+    constructor(name, type){
+        console.log('player', this);
+        this.name = name;
+        this.type = type;
+    }
+    introduce() {
+        console.log(`Hi I am ${this.name}. I am a ${this.type}`);
+    }
+}
+// every time we create a object we gonna have the properties and the ability to introduce themselves.
+
+// extends
+
+class Wizard extends Player {
+    // every time we extend sth we need to also call the constructor funcion of the Player. 
+    constructor(name, type) {
+        super(name, type);// this stands for the constructor of Player.
+        console.log("wizard", this);
+    }
+    play() {
+        console.log(`WEEEEE I'm a ${this.name}.`)
+    }
+}
+
+const wizard1 = new Wizard("Shelly", 'Healer');
+const wizard2 = new Wizard('Shawn', "Dark Magic");
+
+
+```
