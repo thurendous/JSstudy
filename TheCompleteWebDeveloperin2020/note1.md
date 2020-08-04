@@ -358,5 +358,68 @@ and keeo the deterministic property. No matter what you put into the funciton it
 1. Deterministic-- > always produces the same results given the same inputs
 2. No Side Effects-- > It does not depend on any state, or data, change during a program’s execution.It must only depend on its input elements.
 
+# Advanced Arrays
+``` javascript
+const array = [1, 2, 10, 16];
 
+const double = []
+const newArray = array.forEach((num) => {
+    double.push(num * 2);
+})
+console.log(newArray);
 
+```
+> map
+``` javascript
+const array = [1,2,10,16];
+const mapArray = array.map((num) => {
+    return num * 2;
+});
+console.log("map", mapArray);
+// here the map funciton iterate the array and use the function upon each element of the array and return the new array.
+// simple way to write 
+cosnt mapArray = array.map(num => num * 2;);
+
+```
+> as a result, you want to use the "map" against "foreach" here. Cuz foreach will only iterate the element but do not return anything.
+
+> **filter**   
+> **definition:** here the filter function filters the array list. if the function valued returned is true then it will return the array value.   if the function value returned false then it will not be returned. 
+
+``` javascript
+const filterArray = array.filter(num => {
+    return num > 5;
+})
+
+// short form 
+const filterArray = array.filter(num => num >5);
+console.log("filter", filterArray);
+// here we use the  
+
+```
+
+> reduce  
+> **definition:**
+
+``` javascript
+const array = [1,2,10,16];
+const reduceArray = array.reduce((accumulator, num) => {
+    return accumulator + num;
+}, 0);
+console.log("reduce", reduceArray);
+// accumulator is sth that can restore the data in the function. 
+
+```
+
+> The function above showed as "map", "filter", "reduce" is some pure functions. 
+
+# some other methods
+Remove 0 (zero) elements before index 2, and insert "drum" and "guitar"
+``` javascript
+let myFish = ['angel', 'clown', 'mandarin', 'sturgeon']
+let removed = myFish.splice(2, 0, 'drum', 'guitar')
+
+// myFish is ["angel", "clown", "drum", "guitar", "mandarin", "sturgeon"] 
+// removed is [], no elements removed
+
+```
