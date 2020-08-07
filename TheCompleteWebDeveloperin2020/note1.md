@@ -28,6 +28,7 @@ the Takeaways:
 
 ### Changing Style
 **using the style**
+
 ``` javascript
 document.querySelector("h1").style.background = "yellow";
 // by this you change the CSS. But it is not a good way to change the style. cuz usually we use the css file and html file to control the style and structure respectively. we don't want to mix them together. so that's why we use it the way below.
@@ -53,6 +54,7 @@ text-decoration: line-through;
 
 ## change the text
 **innerHTML**
+
 ``` javascript
 document.querySelector("h1").innerHTML = "<strong>!!!!</strong>";
 // this can change the text content of the h1 tag
@@ -70,6 +72,7 @@ var childrenA = yeye.children;
 ```
 
 ## DOM Events
+
 ``` javascript
 var button = document.getElementsByTagName("button");
 button[0].addEventListener("click", function(){
@@ -105,6 +108,7 @@ button.addEventListener("click", function(){
  A callback function is to
 put a function into a funciont's parameter position and don't let it run until the main event is called.
 e.g.
+
 ``` javascript
 button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterClick);
@@ -138,6 +142,7 @@ React is Declarative. and jQuery is Imperative.
 you can use "youmightnotneedjquery.com" to check if you need jquery or not. 
 
 # Scope 
+
 ``` javascript
     // if you type this in the console of browser
     // we declared the function in the root scope
@@ -162,6 +167,7 @@ you can use "youmightnotneedjquery.com" to check if you need jquery or not.
 ```
 
 # tenary operator
+
 ``` javascript
 // tenary operator 
 // condition ? expr1 : expr2;  (expr: expression)
@@ -236,6 +242,7 @@ obj["john snow"];
 
 
 # ES5 and ES6
+
 ``` javascript
 const a = "Simon";
 const b = true;
@@ -262,6 +269,7 @@ const greetingBest = `Hello ${name} you seem to be ${age}. What a ${pet} you hav
 ```
 
 # data type symbol
+
 ``` javascript
 let sym1 = Symbol();
 let sym2 = Symbol("foo");
@@ -273,6 +281,7 @@ sym2 === sym3;
 
 ```
 # arrow function
+
 ``` javascript
 function add(a,b) {
     return a+b;
@@ -328,6 +337,7 @@ add();
 ```
 
 # currying
+
 ``` javascript
 const multiply = (a,b) => a * b;
 const curriedmultiply = (a) => (b) => a*b; 
@@ -359,6 +369,7 @@ and keeo the deterministic property. No matter what you put into the funciton it
 2. No Side Effects-- > It does not depend on any state, or data, change during a program’s execution.It must only depend on its input elements.
 
 # Advanced Arrays
+
 ``` javascript
 const array = [1, 2, 10, 16];
 
@@ -370,6 +381,7 @@ console.log(newArray);
 
 ```
 > map
+
 ``` javascript
 const array = [1,2,10,16];
 const mapArray = array.map((num) => {
@@ -425,6 +437,7 @@ let removed = myFish.splice(2, 0, 'drum', 'guitar')
 ```
 
 # advanced objects
+
 ``` javascript
 // reference type
 var num1 = 1;
@@ -495,4 +508,108 @@ const wizard1 = new Wizard("Shelly", 'Healer');
 const wizard2 = new Wizard('Shawn', "Dark Magic");
 
 
+```
+
+# concat and push and the referrence
+
+``` javascript
+var c = [1,2,3,4,5];
+var d = c;
+d.push(123124541);
+console.log(c);
+//[1,2,3,4,5,123124541]
+console.log(d);
+//[1,2,3,4,5,123124541]
+``` 
+
+``` javascript
+var c = [1,2,3,4,5];
+var d = [].concat(c);
+// var d = c.push(1231412);
+// in this way you change the original c list.
+d.push(12353243)
+console.log(d);
+//[1, 2, 3, 4, 5, 12353243]
+console.log(c);
+//[1, 2, 3, 4, 5]
+```
+
+# copy and stack
+
+``` javascript
+// primitive types are copied and Object are not copied they are just referenced. 
+a = 5; // primitive type
+a = {}; // Objects
+
+```
+
+``` javascript
+let obj = {a: "a", b: "b", c: "c"};
+let clone = Object.assign({}, obj);
+let clone2 = {...obj};
+// this is the shallow clone we can only clone the first layer see the example below.
+obj.c = 5;
+console.log(clone);
+```
+
+# shallow clone and deep clone
+``` javascript
+let obj = {
+    a: "a", 
+    b: "b", 
+    c: {
+        deep: "try and copy me"
+    }
+};
+// shallow clone
+let clone = Object.assign({}, obj);
+let clone2 = {...obj};
+let superClone = JSON.parse(JSON.stringify(obj))
+
+obj.c.deep = "hahaha";
+console.log(obj);
+console.log(clone);
+console.log(clone2);
+console.log(superClone);
+
+// deep clone
+let superClone = JSON.parse(JSON.stringify(obj))
+```
+
+# type coercion 
+in javascript type coercion happens when you use the double = sign. 
+Is there sometimes you have to use "=="? No, you don't. You need to always use the triple sign "===" to make sure the accuracy of the programme.
+``` javascript
+1 == "1"
+// 1 == 1  -> true
+// always use "===" and never use "==". cuz it's quite confusing. 
+```
+
+# object.is
+``` javascript
++0 === -0 // true
+object.is(+0, -0); // false
+object.is(NaN, NaN); // true
+NaN === NaN; //false
+
+
+```
+
+# push
+push method can be used to add an element into the list and return the length of the new list. 
+
+# ES7
+ES7 has only 2 sessions to the language. 
+
+``` javascript
+// 1
+const pets = ["cat", "dog", "bat"];
+pets.includes("dog"); //true
+pets.includes("bee"); //false
+
+// 2
+const square = (x) => x**2
+const cube = (x) => x**3
+square(4);// 16
+cube(3); // 27
 ```
