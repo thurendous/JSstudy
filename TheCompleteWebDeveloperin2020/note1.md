@@ -672,3 +672,130 @@ Object.entries(obj).map(value => {
 
 
 ```
+
+
+
+# ES10
+
+``` javascript
+// flat()
+const array = [1,[2,3],[4,5]];
+const array1 = array.flat();
+console.log(array1);
+// change the array into a normal flat array. Ignore the deep brakets of he array. 
+// [1,2,3,4,5]
+
+//flat() -> deep brackets
+const array = [1,2,[3,4,[5]]];
+const array3 = array.flat();
+console.log(array3);
+// [1,2,3,4,[5]]
+
+// flat(num)
+const array = [1,2,[3,4,[5]]];
+const array4 = array.flat(2);
+console.log(array4);
+// [1,2,3,4,5]
+
+// flat() -> delete the empty element
+const array = ["bob", "Sally", ,,,,"Cindy"]
+array.flat();
+//["bob", "Sally", "Cindy"]
+
+// flatmap()
+array = [1,2,3,[4,5,[6]]]
+const array2 = array.flatMap(ele => ele + 1);
+//[2, 3, 4, "4,5,61"]
+
+// trim()
+var userEmail = "     eddy@gmail.com";
+var userEmail2 = "jonnydangerous@gmail.com    ";
+userEmail = userEmail.trimStart();
+userEmail2 = userEmail2.trimEnd();
+console.log(userEmail, userEmail2);
+//  "eddy@gmail.com" "jonnydangerous@gmail.com"
+// blank spaces are deleted
+
+userProfiles = [['commanderTome', 23], [["derekZlander"], 40],['zZZ',18]];
+Object.fromEntries(userProfiles);
+// This is the opposite of the method "Object.entries" 
+// Object.entries -> change the Object into an array
+// Object.fromEntries -> change an Object into an Array
+
+// try and catch block
+try { 
+} catch {
+
+}
+
+// example (in the past old way )
+try {
+    true + 2
+} catch(err) {
+    console.log(`you've messed up !${err}`)
+}
+
+// in ES10 you do not need to pass the catch(err) so that we can just use catch
+
+// new way of ES10
+try {
+
+}catch {
+    console.log("you have messed up son!! ");
+}
+
+```
+
+
+# Advanced Loop 
+
+``` javascript
+const basket = ["apple", "orange", "grapes"];
+
+for (let i =0; i < basket.length; i++){
+    console.log(basket[i]);
+}
+
+// 2
+basket.forEach (item => {
+    console.log(item);
+})
+
+// 2 other way to loop through the 
+// for of loop 
+for ( item of basket ) {
+    console.log(item);
+}
+// apple
+// orange
+// grapes
+
+// iterating: go one by one and look at these items.
+
+// for in  -> for iterable
+for (item of "basket") {
+    console.log(item);
+}
+// b
+//a
+//s
+//k
+//e
+//t
+
+// for in loop allow us to access the object properties.
+// for in  -> this is called enumerating. it is for objects.
+const detailedBasket = {
+    apples: 5,
+    oranges: 10,
+    grapes: 1000
+}
+
+for (item in detailedBasket) {
+    console.log(item);
+}
+
+// for in -> for objects  -> properties and enumerating
+// for of -> for array and iterables.
+
+```
