@@ -24,3 +24,5 @@ const power = (x) => x ** 100
 power(10000)
 // infinity
 
+
+

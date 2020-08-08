@@ -613,3 +613,62 @@ const cube = (x) => x**3
 square(4);// 16
 cube(3); // 27
 ```
+
+# ES8
+
+
+
+``` javascript
+// 1st 
+.padStart() // add some padding for the string
+.padStart(10); // with 10 spaces in front of it
+.padEnd()
+.padEnd(10); // get 10 spaces after the string
+
+// 2nd trailing commas function
+const fun = (a,b,c,d,) -> {
+    console.log(a);
+}
+
+fun(1,2,3,4, ) // valid javascript
+// the purpose of this is we can arrange the code in this way in order to make it cleaner.the ending comma will not give you an erorr.
+const fun = (
+            a,
+            b,
+            c,
+            d,
+        ) => {
+            console.log(a);
+        }
+
+// 3rd
+object.values
+object.entries
+object.keys
+
+let obj = {
+    username1: "Santa",
+    username2: "RudoIf",
+    username3: "MR.Grinch"
+};
+// this is an object and we cannot do the map or filter, reduce etc.
+// how to iterate it?
+Object.keys(obj).forEach((key, index) => {
+    console.log(key, obj[key]);
+})
+
+Object.values(obj).forEach(value => {
+    console.log(value);
+})
+
+
+Object.entries(obj).forEach(value => {
+    console.log(value);
+})
+
+Object.entries(obj).map(value => {
+    return value[1] +" "+ value[0].replace("uesername", ""); 
+})
+
+
+```
