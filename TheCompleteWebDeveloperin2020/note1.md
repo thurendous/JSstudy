@@ -799,3 +799,127 @@ for (item in detailedBasket) {
 // for of -> for array and iterables.
 
 ```
+
+# Debugger
+You can add a "debugger" into the code in order to debug the code.
+``` javascript
+const flattened = [[0,1],[2,3],[4,5]].reduce((accumulator, array) => {
+    debugger;
+    return accumulator.concat(array);
+}, [])
+
+```
+
+# How does JS actually work??
+What is a program?
+-> 
+- allocate memory
+- parse and execute
+
+engine consists of 2 parts. the memory heap and call stack. 堆和栈
+
+- memory heap: the memory allocation happens.
+- call stack: where the parse and execute happens.
+
+memory heap is a kind of limited resource. That's why you hear that the global varible is bad. cuz it costs a lot of memory heap. 
+
+Call Stack is the thing that which reads our scripts and executes it. 
+> if you input a "console.log" then the code is put in the call stack.  
+
+``` javascript 
+const one = () => {
+    const two =() => {
+        console.log("4");
+    } 
+    two();
+}
+one();
+
+// what happened in the call stack 
+// console.log("4") was put in the first and run then deleted
+// two() was put in the second and deleted
+// one()
+
+```
+Javascript is a single threaded language that can be non-blocking.
+- single threaded: has only one stack. You can only do one thing at a time.单线程（this is called synchronous programming.）
+
+``` javascript
+// Recursion(递归):a function that calls itself.
+function foo() {
+    foo();
+}
+//call stack
+console.log("1!");
+setTimeout(() => {
+    console.log("2");
+}, 2000)
+console.log(3);
+// the code above is a asynchronous programming.
+
+// 1. console.log("1!");
+// 2.setTimeout(() => {
+//     console.log("2");
+// }, 2000) 
+// 4. delete the setTimeout
+// 5. console.log(3);
+// 10. run the "console.log("2")"
+//----call stack
+
+// 3.setTimeout(() => {
+//     console.log("2");
+// }, 2000)
+// 6. run setTimeout
+//----web API
+
+// 7. generate a callback
+//----Callbakc queue
+
+// 8. check the callback function.
+// 9. if there is callbacks then put it into call stack.
+//----EVENT loop 
+// keeps checking all the time if the call stack is empty or not. 
+// check if there is some callbacks?
+
+```
+
+
+# Module
+> read https://medium.com/sungthecoder/javascript-module-module-loader-module-bundler-es6-module-confused-yet-6343510e7bde
+
+↑ES6
+↑browserify  
+↑IIFE  
+↑Script Tags  
+↑Inline Script
+
+problems of the Inline Script:
+- if it gets so many
+- if it pollute the global NameSpace. 
+
+with ES6 we have the way to do it. ES& + webpack
+``` javascript
+export const add = (a,b) -> a + b;
+// you can export multiple things from the file.
+
+export default function add() {
+    return a+b;
+}
+// you can only export one thing
+
+import {add} from './add';
+
+import add from './add';
+
+
+
+// what is IIFE
+
+
+```
+
+
+ 
+
+
+
