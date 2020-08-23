@@ -62,3 +62,44 @@ to list all the packages installed for npm.
 
 `live-server`  
 while you are in the pj folder you can use this command to call the live-server service for you.  
+
+
+# deploy
+https://create-react-app.dev/docs/deployment/#github-pages
+
+add this:  
+``` json
+"homepage": "https://myusername.github.io/my-app",
+install the githubpage server 
+```
+
+``` Shell
+
+npm install --save gh-pages
+yarn add gh-pages
+
+```
+Add the following scripts in your package.json:
+```
+"scripts": {
++ "predeploy": "npm run build",
++ "deploy": "gh-pages -d build",
+"start": "react-scripts start",
+"build": "react-scripts build",
+```
+
+If you are deploying to a GitHub user page instead of a project page you'll need to make one additional modification:
+
+Tweak your package.json scripts to push deployments to master:
+```
+"scripts": {
+    "predeploy": "npm run build",
+-   "deploy": "gh-pages -d build",
++   "deploy": "gh-pages -b master -d build",
+```
+
+then deploy it  
+`npm run deploy` 
+
+Step 4: For a project page, ensure your project’s settings use gh-pages  
+Finally, make sure GitHub Pages option in your GitHub project settings is set to use the gh-pages branch:
